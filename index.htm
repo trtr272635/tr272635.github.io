@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>網頁全景圖檢視器</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <style>
+        /* 讓全景圖容器佔滿整個視窗 */
+        #panorama {
+            width: 100%;
+            height: 600px; /* 您可以調整這個高度 */
+            max-width: 800px; /* 限制最大寬度，讓網頁更好看 */
+            margin: 0 auto; /* 置中 */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>我的互動式全景圖</h1>
+
+    <div id="panorama"></div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <script>
+        pannellum.viewer('panorama', {
+            "type": "equirectangular",
+            "panorama": "pano.jpg", /* <-- !! 替換成你的全景圖檔案路徑 !! */
+            "autoLoad": true, /* 讓全景圖自動載入 */
+            "showZoom": false, /* 隱藏縮放按鈕 */
+            "autoRotate": -2 /* 讓全景圖緩慢自動旋轉 (可選) */
+        });
+    </script>
+
+</body>
+</html>
